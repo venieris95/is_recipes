@@ -1,5 +1,5 @@
 import streamlit as st
-from pathlib import path
+from pathlib import Path
 
 st.set_page_config(
     page_title="Recipe List",
