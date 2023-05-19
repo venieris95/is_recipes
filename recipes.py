@@ -7,9 +7,7 @@ st.set_page_config(
 
 st.title("Main Page")
 st.sidebar.title("Recipes")
-recipes = st.selectbox(
-...     'Select a recipe',
-...     ('Cookie', 'Brownie', 'Protein bar'))
+recipes = st.selectbox('Select a recipe',('Cookie', 'Brownie', 'Protein bar'))
 if recipes == "Cookie": 
   recipe = Path('cookie.py').read_text()
   st.write(recipe)
