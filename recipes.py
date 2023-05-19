@@ -6,9 +6,10 @@ st.set_page_config(
     page_icon="🍪",
 )
 
-st.title("Main Page")
 st.sidebar.title("Recipes")
 recipes = st.sidebar.selectbox('Select a recipe',(' ','Brownie 🍫', 'Cookie 🍪', 'Protein bar 💪'))
+if recipes == ' ':
+    st.write("Main page, please select a recipe")
 if recipes == "Brownie 🍫": 
   recipe = Path('recipes/brownie.txt').read_text()
   st.write(recipe)
