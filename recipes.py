@@ -8,13 +8,13 @@ st.set_page_config(
 
 st.title("Main Page")
 st.sidebar.title("Recipes")
-recipes = st.sidebar.selectbox('Select a recipe',(' ','Brownie', 'Cookie', 'Protein bar'))
-if recipes == "Cookie": 
+recipes = st.sidebar.selectbox('Select a recipe',(' ','Brownie', 'Cookie 🍪', 'Protein bar'))
+if recipes == "Cookie 🍪": 
   recipe = Path('recipes/cookie.txt').read_text()
   st.write(recipe)
-if recipes == "Brownie": 
+if recipes == "Brownie 🍫": 
   recipe = Path('recipes/brownie.txt').read_text()
   st.write(recipe)
-if recipes == "Protein bar": 
+if recipes == "Protein bar 💪": 
   recipe = Path('recipes/protbar.txt').read_text()
   st.write(recipe)
