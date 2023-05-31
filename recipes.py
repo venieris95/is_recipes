@@ -44,7 +44,7 @@ with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
         image = Image.open(requests.get("https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cookie_stack.jpg/640px-Cookie_stack.jpg",
-                                  stream=True).raw)
+                                  stream=True).raw))
         new_img = image.resize((300, 300))
         st.image(new_img)
     with text_column:
