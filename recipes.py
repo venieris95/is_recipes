@@ -19,8 +19,8 @@ with st.container():
 with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
-        r = requests.get("https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Brownie_Dessert.jpg/640px-Brownie_Dessert.jpg",
-                                  stream=True)
+        imgUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Brownie_Dessert.jpg/640px-Brownie_Dessert.jpg"
+        r = requests.get(imgUrl, stream=True)
         image = Image.open(io.BytesIO(r.content))
         new_img = image.resize((300, 300))
         st.image(new_img)
