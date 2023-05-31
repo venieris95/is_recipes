@@ -19,7 +19,7 @@ with st.container():
 with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
-        imgUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Brownie_Dessert.jpg/640px-Brownie_Dessert.jpg"
+        imgUrl = "https://github.com/venieris95/is_recipes/blob/cfd0bc60d81d9da4e4b93119417e6bcbebd935ac/Brownie_Dessert.jpg"
         r = requests.get(imgUrl, stream=True)
         image = Image.open(io.BytesIO(r.content))
         new_img = image.resize((300, 300))
@@ -43,7 +43,7 @@ with st.container():
 with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
-        image = Image.open(requests.get("https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cookie_stack.jpg/640px-Cookie_stack.jpg",
+        image = Image.open(requests.get("https://github.com/venieris95/is_recipes/blob/cfd0bc60d81d9da4e4b93119417e6bcbebd935ac/640px-Cookie_stack.jpg",
                                   stream=True).raw)
         new_img = image.resize((300, 300))
         st.image(new_img)
@@ -65,7 +65,7 @@ with st.container():
 with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
-        image = Image.open(requests.get("https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Milky-way-broken.JPG/640px-Milky-way-broken.JPG",
+        image = Image.open(requests.get("https://github.com/venieris95/is_recipes/blob/cfd0bc60d81d9da4e4b93119417e6bcbebd935ac/protein_bar.jpeg",
                                   stream=True.raw))
         new_img = image.resize((300, 300))
         st.image(new_img)
