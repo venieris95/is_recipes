@@ -64,7 +64,7 @@ with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
         image = Image.open(requests.get("https://github.com/venieris95/is_recipes/blob/main/protein_bar.jpeg?raw=true",
-                                  stream=True.raw))
+                                  stream=True).raw)
         new_img = image.resize((300, 300))
         st.image(new_img)
     with text_column:
