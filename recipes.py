@@ -5,7 +5,7 @@ import time
 import io
 
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
-st.set_page_config(page_title="S.P.O.O.N. Recipes", page_icon= "🍪", layout="wide")
+st.set_page_config(page_title="S.P.O.O.N. Recipes", layout="wide")
 
 
 # ---- HEADER SECTION ----
