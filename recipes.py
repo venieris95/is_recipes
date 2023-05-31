@@ -5,7 +5,8 @@ import time
 import io
 
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
-owl = Image.open("https://github.com/venieris95/is_recipes/blob/main/owl.png?raw=true")
+owl = Image.open(requests.get("https://github.com/venieris95/is_recipes/blob/main/owl.png?raw=true",
+                                  stream=True).raw)
 st.set_page_config(page_title="S.P.O.O.N. Recipes", page_icon= owl, layout="wide")
 
 
