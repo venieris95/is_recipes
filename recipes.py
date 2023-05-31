@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import requests
 import time
+import io
 
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="S.P.O.O.N. Recipes", page_icon= "🍪", layout="wide")
@@ -18,8 +19,9 @@ with st.container():
 with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
-        image = Image.open(requests.get("https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Brownie_Dessert.jpg/640px-Brownie_Dessert.jpg",
-                                  stream=True))
+        r = requests.get("https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Brownie_Dessert.jpg/640px-Brownie_Dessert.jpg",
+                                  stream=True).raw)
+        image = Image.open(io.BytesIO(r.content))
         new_img = image.resize((300, 300))
         st.image(new_img)
     with text_column:
