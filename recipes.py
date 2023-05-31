@@ -42,7 +42,7 @@ with st.container():
 with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
-        image = Image.open(requests.get("https://github.com/venieris95/is_recipes/blob/cfd0bc60d81d9da4e4b93119417e6bcbebd935ac/640px-Cookie_stack.jpg",
+        image = Image.open(requests.get("https://github.com/venieris95/is_recipes/blob/main/640px-Cookie_stack.jpg?raw=true",
                                   stream=True).raw)
         new_img = image.resize((300, 300))
         st.image(new_img)
@@ -63,7 +63,7 @@ with st.container():
 with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
-        image = Image.open(requests.get("https://github.com/venieris95/is_recipes/blob/cfd0bc60d81d9da4e4b93119417e6bcbebd935ac/protein_bar.jpeg",
+        image = Image.open(requests.get("https://github.com/venieris95/is_recipes/blob/main/protein_bar.jpeg?raw=true",
                                   stream=True.raw))
         new_img = image.resize((300, 300))
         st.image(new_img)
