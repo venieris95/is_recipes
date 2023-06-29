@@ -6,8 +6,8 @@ import io
 
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
 owl = Image.open(requests.get("https://github.com/venieris95/is_recipes/blob/main/owl.png?raw=true",
-                                  stream=True).raw)
-st.set_page_config(page_title="S.P.O.O.N. Recipes", page_icon= owl, layout="wide")
+                              stream=True).raw)
+st.set_page_config(page_title="S.P.O.O.N. Recipes", page_icon=owl, layout="wide")
 
 with st.container():
     image_column, text_column = st.columns((1, 2))
@@ -36,12 +36,13 @@ with st.container():
                 st.success('Recipe selected!', icon="✅")
                 time.sleep(2)
                 st.experimental_rerun()
-          
+
 with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
-        image = Image.open(requests.get("https://github.com/venieris95/is_recipes/blob/main/640px-Cookie_stack.jpg?raw=true",
-                                  stream=True).raw)
+        image = Image.open(
+            requests.get("https://github.com/venieris95/is_recipes/blob/main/640px-Cookie_stack.jpg?raw=true",
+                         stream=True).raw)
         new_img = image.resize((300, 300))
         st.image(new_img)
     with text_column:
@@ -53,22 +54,22 @@ with st.container():
             Packed with your choice of delicious mix-ins like chocolate chips, nuts, or dried fruits, these cookies offer a burst of flavors with every bite. Whether you enjoy them with a glass of milk or share them with friends and family, these homemade cookies are guaranteed to bring a smile to your face.
             """
         )
-      
-         with st.expander("View Recipe"):
-              cookie_url = "https://raw.githubusercontent.com/venieris95/is_recipes/main/recipes/cookie.txt"
-              cookie_recipe = get_file_contents(cookie_url)
-              st.text_area("Recipe", value=cookie_recipe, height=400)
-  
-              if st.button('Load recipe on S.P.O.O.N.', key='Cookie'):
-                  st.success('Recipe selected!', icon="✅")
-                  time.sleep(2)
-                  st.experimental_rerun()
-              
+
+        with st.expander("View Recipe"):
+            cookie_url = "https://raw.githubusercontent.com/venieris95/is_recipes/main/recipes/cookie.txt"
+            cookie_recipe = get_file_contents(cookies_url)
+            st.text_area("Recipe", value=cookie_recipe, height=400)
+
+            if st.button('Load recipe on S.P.O.O.N.', key='Cookie'):
+                st.success('Recipe selected!', icon="✅")
+                time.sleep(2)
+                st.experimental_rerun()
+
 with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
         image = Image.open(requests.get("https://github.com/venieris95/is_recipes/blob/main/protein_bar.jpeg?raw=true",
-                                  stream=True).raw)
+                                        stream=True).raw)
         new_img = image.resize((300, 300))
         st.image(new_img)
     with text_column:
@@ -82,12 +83,12 @@ with st.container():
             """
         )
 
-         with st.expander("View Recipe"):
-              protbar_url = "https://raw.githubusercontent.com/venieris95/is_recipes/main/recipes/protbar.txt"
-              protbar_recipe = get_file_contents(protbar_url)
-              st.text_area("Recipe", value=protbar_recipe, height=400)
-  
-              if st.button('Load recipe on S.P.O.O.N.', key='Protein Bar'):
-                  st.success('Recipe selected!', icon="✅")
-                  time.sleep(2)
-                  st.experimental_rerun()
+        with st.expander("View Recipe"):
+            protbar_url = "https://raw.githubusercontent.com/venieris95/is_recipes/main/recipes/protbar.txt"
+            protbar_recipe = get_file_contents(protbar_url)
+            st.text_area("Recipe", value=protbar_recipe, height=400)
+
+            if st.button('Load recipe on S.P.O.O.N.', key='Protein Bar'):
+                st.success('Recipe selected!', icon="✅")
+                time.sleep(2)
+                st.experimental_rerun()
