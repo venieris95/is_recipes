@@ -5,13 +5,16 @@ import time
 import io
 
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
+def get_file_contents(file_url):
+    response = requests.get(file_url)
+    return response.text
+
 owl = Image.open(requests.get("https://github.com/venieris95/is_recipes/blob/main/owl.png?raw=true",
                               stream=True).raw)
 st.set_page_config(page_title="S.P.O.O.N. Recipes", page_icon=owl, layout="wide")
 
-def get_file_contents(file_url):
-    response = requests.get(file_url)
-    return response.text
+st.title("Welcome to S.P.O.O.N. Digital Scale Interface")
+st.subheader("Shape up your cooking experience with our spoon-shaped digital scale!")
 
 with st.container():
     image_column, text_column = st.columns((1, 2))
