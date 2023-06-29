@@ -41,14 +41,14 @@ with st.container():
         )
 
       with st.expander("View Recipe"):
-        brownies_url = "https://raw.githubusercontent.com/venieris95/is_recipes/main/recipes/brownie.txt"
-        brownies_recipe = get_file_contents(brownies_url)
-        st.text_area("Recipe", value = brownies_recipe, height = 400)
+          brownies_url = "https://raw.githubusercontent.com/venieris95/is_recipes/main/recipes/brownie.txt"
+          brownies_recipe = get_file_contents(brownies_url)
+          st.text_area("Recipe", value = brownies_recipe, height = 400)
         
-        if st.button('Load recipe on S.P.O.O.N.',key='Brownies'):
-            st.success('Recipe selected!', icon="✅")
-            time.sleep(2)
-            st.experimental_rerun()
+          if st.button('Load recipe on S.P.O.O.N.',key='Brownies'):
+              st.success('Recipe selected!', icon="✅")
+              time.sleep(2)
+              st.experimental_rerun()
           
 with st.container():
     image_column, text_column = st.columns((1, 2))
