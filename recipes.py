@@ -9,6 +9,10 @@ owl = Image.open(requests.get("https://github.com/venieris95/is_recipes/blob/mai
                               stream=True).raw)
 st.set_page_config(page_title="S.P.O.O.N. Recipes", page_icon=owl, layout="wide")
 
+def get_file_contents(file_url):
+    response = requests.get(file_url)
+    return response.text
+
 with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
