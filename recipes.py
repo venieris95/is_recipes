@@ -54,15 +54,15 @@ with st.container():
             """
         )
        with st.expander("View Recipe"):
-         cookies_url = "https://raw.githubusercontent.com/venieris95/is_recipes/main/recipes/cookie.txt"
-         cookies_recipe = get_file_contents(brownies_url)
-         st.text_area("Recipe", value = cookies_recipe, height = 400)
-         
-         if st.button('Display recipe', key="Cookies"):
-            st.success('Recipe selected!', icon="✅")
-            time.sleep(2)
-            st.experimental_rerun()
+            cookie_url = "https://raw.githubusercontent.com/venieris95/is_recipes/main/recipes/cookie.txt"
+            cookie_recipe = get_file_contents(cookies_url)
+            st.text_area("Recipe", value=cookie_recipe, height=400)
 
+            if st.button('Load recipe on S.P.O.O.N.', key='Cookie'):
+                st.success('Recipe selected!', icon="✅")
+                time.sleep(2)
+                st.experimental_rerun()
+              
 with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
@@ -82,11 +82,11 @@ with st.container():
         )
 
        with st.expander("View Recipe"):
-         protbar_url = "https://raw.githubusercontent.com/venieris95/is_recipes/main/recipes/protbar.txt"
-         protbar_recipe = get_file_contents(protbar_url)
-         st.text_area("Recipe", value = protbar_recipe, height = 400)
-         
-         if st.button('Display recipe',key='Protein Bars'):
-           st.success('Recipe selected!', icon="✅")
-           time.sleep(2)
-           st.experimental_rerun()
+            protbar_url = "https://raw.githubusercontent.com/venieris95/is_recipes/main/recipes/protbar.txt"
+            protbar_recipe = get_file_contents(protbar_url)
+            st.text_area("Recipe", value=protbar_recipe, height=400)
+
+            if st.button('Load recipe on S.P.O.O.N.', key='Protein Bar'):
+                st.success('Recipe selected!', icon="✅")
+                time.sleep(2)
+                st.experimental_rerun()
