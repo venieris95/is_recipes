@@ -9,6 +9,9 @@ owl = Image.open(requests.get("https://github.com/venieris95/is_recipes/blob/mai
                                   stream=True).raw)
 st.set_page_config(page_title="S.P.O.O.N. Recipes", page_icon= owl, layout="wide")
 
+def get_file_contents(file_url):
+    response = requests.get(file_url)
+    return response.text
 
 # ---- HEADER SECTION ----
 with st.container():
@@ -36,11 +39,17 @@ with st.container():
             Each bite is filled with a perfect balance of sweetness and decadence, making them an irresistible treat for any occasion. Whether you enjoy them warm with a scoop of vanilla ice cream or simply on their own, these brownies are sure to satisfy your sweet tooth.
             """
         )
-        if st.button('Display recipe',key='Brownies'):
+
+      with st.expander("View Recipe"):
+        brownies_url = "https://raw.githubusercontent.com/venieris95/is_recipes/main/recipes/brownie.txt"
+        brownies_recipe = get_file_contents(brownies_url)
+        st.text_area("Recipe", value = brownies_recipe, height = 400)
+        
+        if st.button('Load recipe on S.P.O.O.N.',key='Brownies'):
             st.success('Recipe selected!', icon="✅")
             time.sleep(2)
             st.experimental_rerun()
-
+          
 with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
@@ -57,7 +66,12 @@ with st.container():
             Packed with your choice of delicious mix-ins like chocolate chips, nuts, or dried fruits, these cookies offer a burst of flavors with every bite. Whether you enjoy them with a glass of milk or share them with friends and family, these homemade cookies are guaranteed to bring a smile to your face.
             """
         )
-        if st.button('Display recipe', key="Cookies"):
+       with st.expander("View Recipe"):
+         cookies_url = "https://raw.githubusercontent.com/venieris95/is_recipes/main/recipes/cookie.txt"
+         cookies_recipe = get_file_contents(brownies_url)
+         st.text_area("Recipe", value = cookies_recipe, height = 400)
+         
+         if st.button('Display recipe', key="Cookies"):
             st.success('Recipe selected!', icon="✅")
             time.sleep(2)
             st.experimental_rerun()
@@ -79,7 +93,13 @@ with st.container():
             With a variety of flavors and customizable ingredients, you can create protein bars tailored to your taste preferences and dietary needs. Whether you're hitting the gym or need a quick and nutritious snack, these protein bars are the perfect choice.
             """
         )
-        if st.button('Display recipe',key='Protein Bars'):
-            st.success('Recipe selected!', icon="✅")
-            time.sleep(2)
-            st.experimental_rerun()
+
+       with st.expander("View Recipe"):
+         protbar_url = "https://raw.githubusercontent.com/venieris95/is_recipes/main/recipes/protbar.txt"
+         protbar_recipe = get_file_contents(protbar_url)
+         st.text_area("Recipe", value = protbar_recipe, height = 400)
+         
+         if st.button('Display recipe',key='Protein Bars'):
+           st.success('Recipe selected!', icon="✅")
+           time.sleep(2)
+           st.experimental_rerun()
