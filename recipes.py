@@ -61,7 +61,7 @@ with st.container():
 
         with st.expander("View Recipe"):
             cookie_url = "https://raw.githubusercontent.com/venieris95/is_recipes/main/recipes/cookie.txt"
-            cookie_recipe = get_file_contents(cookies_url)
+            cookie_recipe = get_file_contents(cookie_url)
             st.text_area("Recipe", value=cookie_recipe, height=400)
 
             if st.button('Load recipe on S.P.O.O.N.', key='Cookie'):
