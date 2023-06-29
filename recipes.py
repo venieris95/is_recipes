@@ -14,7 +14,7 @@ owl = Image.open(requests.get("https://github.com/venieris95/is_recipes/blob/mai
 st.set_page_config(page_title="S.P.O.O.N. Recipes", page_icon=owl, layout="wide")
 
 st.title("Welcome to S.P.O.O.N. Digital Scale Interface")
-st.subheader("Shape up your cooking experience with our spoon-shaped digital scale!")
+st.subheader("Shape up your cooking experience with our spoon-shaped digital scale! Simply press "Load recipe on S.P.O.O.N" to display the recipe that you like on the device!")
 
 with st.container():
     image_column, text_column = st.columns((1, 2))
