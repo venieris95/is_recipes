@@ -28,7 +28,7 @@ def check_credentials():
         return False
     elif not st.session_state["credentials_correct"]:
         # Password not correct, show input + error.
-        st.warning("Credentials: username: edutechatpython.com | password: WeLo3593!!")
+        st.warning("Credentials: username: interactivesystems2023 | password: presentation_demo")
         st.text_input("Username", on_change=credentials_entered, key="username")
         st.text_input(
             "Password", type="password", on_change=credentials_entered, key="password")
